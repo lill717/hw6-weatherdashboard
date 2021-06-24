@@ -66,5 +66,5 @@ $("#today").text(today.format("MMM Do, YYYY"));
 
 // add 1+ to moment()
 // temp is in calvin
-// (last) icon list link to icon syntax
+// (last) icon - list link to icon syntax
 // //clear form lesson 5-5 js
