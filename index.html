@@ -5,14 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lil Weather Dashboard</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="Assets/css/style.css" />
+    <title>Lil Weather Dashboard</title>
 </head>
 
 <body>
-    <header>
+    <header class="jumbotron">
         <h1>Lil Weather Dashboard</h1>
+        <p id="currentDay" class="lead"></p>
+        <p id="currentHour" class="currentHour"></p>
     </header>
+
     <div class="container">
         <div class="card-contents"></div>
         <h2 class="card-header">Search by City: </h2>
@@ -20,26 +24,30 @@
             <input name="city-name" id="city-name" placeholder="ex. Chicago" type="text" class="form-input" />
             <!--add autofocus="true"??-->
             <button id="search" class="btn">Search</button>
-            <div class="saved-cities">
-                <h3 class="h3">
-                    <h3 class="h3"></h3>
-                    <h3 class="h3"></h3> <!-- hw 4 -15 js-->
-                    <h3 class="h3"></h3>
-                    <h3 class="h3"></h3>
-            </div>
+            <section>
+                <div class="saved-cities">
+                    <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
+                    <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
+                    <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
+                    <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
+                    <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
+                </div>
+            </section>
         </form>
     </div>
 
     <div class="card">
-        <h2> <span id="saved-city-name"></span></h2>    <!-- hw 4 -25 js-->
+        <h2> <span id="saved-city-name"></span></h2> <!-- hw 4 -25 js-->
         <p>Temp: <span id="saved-temp"></span></p>
         <p>Wind: <span id="saved-wind"></span></p>
         <p>Humidity: <span id="saved-humidity"></span></p>
         <p>UV index: <span id="saved-uv-index"></span></p>
     </div>
 
-    <h2>5 Day Forecast: </h2>
-    <script https://code.jquery.com/jquery-3.5.1.min.js></script>
+    <h2 class="fiveday"> 5 Day Forecast: </h2>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type=text/javacript src="Assets/js/javascipt.js"></script>
 </body>
 
