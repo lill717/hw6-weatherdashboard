@@ -28,31 +28,49 @@
 
         <section class="card">
             <h2> <span id="saved-city-name"></span></h2> <!-- hw 4 -25 js-->
-            <p>Temp: <span id="saved-temp"></span></p>
-            <p>Wind: <span id="saved-wind"></span></p>
-            <p>Humidity: <span id="saved-humidity"></span></p>
-            <p>UV index: <span id="saved-uv-index"></span></p>
+            <p>Temp: <span id="temp"></span></p>
+            <p>Wind: <span id="wind"></span></p>
+            <p>Humidity: <span id="humidity"></span></p>
+            <p>UV index: <span id="uv-index"></span></p>
         </section>
 
         <section>
             <h4 class="saved-cities">Previously Searched Cites:</h4>
-                <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
-                <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
-                <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
-                <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
-                <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
-            </div>
-        </section>
-        </form>
+            <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
+            <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
+            <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
+            <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
+            <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
+    </div>
+    </section>
+    </form>
     </div>
 
     <div class="container">
-        <h2 class="fiveday"> 5 Day Forecast: </h2>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script type=text/javacript src="assets/js/javascipt.js"></script>
+        <section class="forecast-container">
+            <table class="card-body table mx-auto my-4">
+              <th>
+                 <p class="fiveday"> 5 Day Forecast: </p>
+              </th>
+              <tbody id="repo-table" class="mx-auto text-center"></tbody>
+                <div class="collapse table-collapse" id="weather-nav">
+                    <ul class="table-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home 
+                                <span class="sr-only"></span>
+                            </a>
+                            <button class="weather-btn" id="weather-btn"><span id="five-day"></span></button>
+                        </li>
+                    </ul>
+                </div>
+                     
+            </table>
+        </section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./assets/js/javascipt.js"></script>
     </div>
 </body>
 
