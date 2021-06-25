@@ -38,6 +38,7 @@ function searchCity(searchValue) {
             e.preventDefault();
             console.log(heeeeyyyyyyyyyy)
             // var value = $("#city-name").val()
+        
             console.log(searchValue);
             searchCity(searchValue);
         });
