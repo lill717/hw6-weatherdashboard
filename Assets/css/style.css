@@ -46,8 +46,9 @@ padding: 40px;
     width: 175px;
   }
 
-.fiveday {
+.forecast-container {
     display: flex;
-    justify-content: center;
+    background-color: black;
+    color: white;
    
 }

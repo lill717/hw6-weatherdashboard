@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Lil Weather Dashboard</title>
 </head>
@@ -16,59 +17,67 @@
         <p id="today" class="date"></p>
     </header>
 
-    <div class="container">
-        <section class="card-contents">
-            <h2 class="card-header">Search by City: </h2>
-            <form>
-                <input name="city-name" id="city-name" placeholder="ex. Chicago" type="text" class="form-input" />
-                <!--add autofocus="true"??-->
-                <button id="search" class="btn">Search</button>
-            </form>
-        </section>
+    <main>
+        <div class="container">
+            <section class="card-contents">
+                <h2 class="card-header">Search by City: </h2>
+                <form>
+                    <input name="city-name" id="city-name" placeholder="ex. Chicago" type="text" class="form-input" />
+                    <!--add autofocus="true"??-->
+                    <button id="search" class="btn">Search</button>
+                </form>
+            </section>
 
-        <section class="card">
-            <h2> <span id="saved-city-name"></span></h2> <!-- hw 4 -25 js-->
-            <p>Temp: <span id="temp"></span></p>
-            <p>Humidity: <span id="humidity"></span></p>
-            <p>Wind: <span id="wind"></span></p>
-            <p>UV index: <span id="uv-index" class="uvText"></span></p>
-        </section>
+            <section class="card">
+                <h2> <span id="saved-city-name"></span></h2> <!-- hw 4 -25 js-->
+                <p>Temp: <span id="temp"></span></p>
+                <p>Humidity: <span id="humidity"></span></p>
+                <p>Wind: <span id="wind"></span></p>
+                <p>UV index: <span id="uv-index" class="uvText"></span></p>
+            </section>
 
-        <section>
-            <h4 class="saved-cities">Previously Searched Cites:</h4>
-            <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
-            <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
-            <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
-            <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
-            <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
+            <div class="forecast-container">
+                <th>
+                    <h4 class="fiveday"> 5 Day Forecast: </h4>
+                </th>
+                    <p><button type="button" class="btn btn-outline-primary">
+                        <p><div><span id="date"></span></div></p>
+                        <p><div>Temp: <span id="temp"></span></div></p>
+                        <p><div>Humidity: <span id="humidity"></span></div></p>
+                        <p><div>Wind: <span id="wind"></span></div></p>
+                    </button></p>
+            </div>
+        </div>
+    </main>
+        <!-- <table class="card-body table mx-auto my-4">
+                                  <th>
+                                     <p class="fiveday"> 5 Day Forecast: </p>
+                                  </th>
+                                  <tbody id="repo-table" class="mx-auto text-center"></tbody>
+                        <div class="collapse table-collapse" id="weather-nav">
+                            <ul class="table-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">
+                                        <span class=data></span>
+                                    </a>
+                                    <button class="weather-btn" id="weather-btn"><span id="five-day"></span></button> -->
+        <!-- </li>
+                            </ul>
+                        </div> -->
+        
+
+    <div>
+        <h4 class="saved-cities">Previously Searched Cites:</h4>
+        <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
+        <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
+        <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
+        <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
+        <p><button class="saved-btn" id="city"><span id="saved-city"></span></button></p>
     </div>
-    </section>
 
-<!-- icon  <img>  "id", "weather-icon") -->
+    <!-- icon  <img>  "id", "weather-icon") -->
 
     </form>
-    </div>
-
-    <div class="container">
-        <section class="forecast-container">
-            <table class="card-body table mx-auto my-4">
-              <th>
-                 <p class="fiveday"> 5 Day Forecast: </p>
-              </th>
-              <tbody id="repo-table" class="mx-auto text-center"></tbody>
-                <div class="collapse table-collapse" id="weather-nav">
-                    <ul class="table-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#"> 
-                                <span class="sr-only"></span>
-                            </a>
-                            <button class="weather-btn" id="weather-btn"><span id="five-day"></span></button>
-                        </li>
-                    </ul>
-                </div>
-                     
-            </table>
-        </section>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
