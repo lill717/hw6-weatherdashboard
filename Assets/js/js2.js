@@ -25,18 +25,6 @@ let forcastCard = $(".fiveday");
 // }
 
 
-$("#search").on("click", function (e) {
-    e.preventDefault();
-    console.log(data);
-
-    var value = $("#city-name").val();
-    // var searchValue = $("#search").val()
-    console.log(value);
-    // searchCity(searchValue);
-    // searchForecast();
-    // searchUVIndex();
-})
-
 
 // Get current forecast to display along with temperature, the humidity, the wind speed, and the UV index
 function currentWeather(url) {
@@ -152,3 +140,19 @@ function currentWeather(lat, lon, tempUrl) {
     //         .then(function (data) {
     //             console.log(data);
 }
+
+
+    // var searchValue = $("#search").val()
+    // searchCity(searchValue);
+    // searchForecast();
+    // searchUVIndex();
+
+$("#search").on("click", function (e) {
+    e.preventDefault();
+    console.log(data);
+
+    var value = $("#city-name").val();
+    `fetch(apiUrl).then(function (response) {
+    console.log(value);
+} ) ;
+} ) 
