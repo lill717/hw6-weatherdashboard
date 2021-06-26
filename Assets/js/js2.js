@@ -24,6 +24,20 @@ let forcastCard = $(".fiveday");
 //         }
 // }
 
+
+$("#search").on("click", function (e) {
+    e.preventDefault();
+    console.log(data);
+
+    var value = $("#city-name").val();
+    // var searchValue = $("#search").val()
+    console.log(value);
+    // searchCity(searchValue);
+    // searchForecast();
+    // searchUVIndex();
+})
+
+
 // Get current forecast to display along with temperature, the humidity, the wind speed, and the UV index
 function currentWeather(url) {
     fetch(url)
@@ -67,14 +81,74 @@ function currentWeather(url) {
         });
 }
 
-function currentWeather(lat, lon, fiveDayUrl) {
-    fiveDayUrl = fiveDayUrl + lat + "=&lat" + lon + "=&lon" + "&exclude=minutely,hourly&alerts" + "&appid=" + apiKey;
-    fetch(fiveDayUrl)
+function currentWeather(lat, lon, tempUrl) {
+    // tempUrl = tempUrl + lat + "=&lat" + lon + "=&lon" + "&exclude=minutely,hourly&alerts" + "&appid=" + apiKey;
+    fetch(tempUrl)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            console.log(doooog);
+            let uvIndex = $("#uv-index");
+            uvIndex.text = (data.current.uvIndex);
+            uvIndex.append();       // Do I need anything in () ???
+
+            if (data.current.uvIndex < 3) {
+                uvText.attr("class", "uvIndex-low");
+            }
+            else if (data.current.uvIndex < 6) {
+                uvText.attr("class", "uvIndex-medium");
+            }
+            else if (data.current.uvIndex < 8) {
+                uvText.attr("class", "uvIndex-high");
+            }
+            else if (data.current.uvIndex < 11) {
+                uvText.attr("class", "uvIndex-very-high");
+            }
+            else if (data.current.uvIndex > 10) {
+                uvText.attr("class", "uvIndex-extremely-high");
+            }
+
+            console.log(data);
 
         })
+
+    function citySearch(cityName) {
+        if (city == "") {
+            city == cityName;
+            currentWeather(tempUrl);
+        }
+        else {
+            city = cityName;
+            today.subtract(5, "days");
+            upWeather(tempUrl);
+        }
+    }
+
+    function savedCities(city) {
+        if (citySearch.length === SEARCH_LIMIT) {
+            citySearch.pop();
+        }
+        citySearch.push(cityArrayToStore);
+        localStorage.setItem(KEY_CITY, JSON.stringify(citySearch));
+    }
+    // Retrieves locally stored cities.
+    function retrieveCities() {
+        if (localStorage.getItem(city)) {
+            return JSON.parse(localStorage.getItem(city));
+        } else {
+            return citySearch;
+        }
+    }
+    // citiesSearched = retrieveCities();
+
+
+
+
+    // function upWeather(fiveDayUrl) {
+    //     fetch(fiveDayUrl)
+    //         .then(function (response) {
+    //             return response.json();
+    //         })
+    //         .then(function (data) {
+    //             console.log(data);
 }
