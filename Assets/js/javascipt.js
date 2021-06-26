@@ -28,7 +28,8 @@ function searchCity(searchValue) {
         }
 
         var savedName = $("#saved-city-name").addClass("cardTitle").text(data.name);
-        var savedTemp = $("#temp").addClass("cardTitle").text(data.name);
+        // var savedTemp = $("#temp").addClass("cardTitle").text(data.name);
+        var savedTemp.attr("src", iconUrl + data.weather[0].icon + "@2x.png");
         var savedWind = $("#wind").addClass("cardTitle").text(data.name);
         var savedHumidity = $("#humidity").addClass("cardTitle").text(data.name);
 
