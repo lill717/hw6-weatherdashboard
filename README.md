@@ -4,7 +4,7 @@
 # Project name
 This is a weather dashboard with a 5 day forecast.
 
- <!-- I work a busy part time job that requires a lot of scheduled appointments. To be time efficient, I needed a daily planner to keep track of all of my important events. I need it colorcoded to tell me which events have passed and which have yet to occur that day. -->
+Enter a city you want a weather forecast in the search bar. Doing so will render the current day's forecast including temperature, humidity, wind, and UV index. The next 5 day's forecast will also be displayed. On the left side are saved cities that you previously searched for. Clicking on them will bring up that city's weather again.
 
 
 Screenshot of the weather dashboard:
@@ -35,4 +35,4 @@ macOS and Windows:
 
 
 # Website Link
-<!-- https://github.com/lill717/hw6.git -->
+https://lill717.github.io/hw6-weatherdashboard/

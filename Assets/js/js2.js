@@ -11,8 +11,8 @@ let forcastCard = $(".fiveday");
 // Get current forecast to display along with temperature, the humidity, the wind speed, and the UV index
 function currentWeather(city) {
 
-const tempUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=imperial";
-console.log(tempUrl)
+    const tempUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=imperial";
+    console.log(tempUrl)
     fetch(tempUrl)
         .then(function (response) {
             return response.json();
@@ -21,7 +21,7 @@ console.log(tempUrl)
         .then(function (data) {
             // console.log("doooog");
 
-            console.log(data    )
+            console.log(data)
             let cityAndDate = $("#saved-city-name");
             let iconWeather = $("temp");
             let temp = $("#temp");
@@ -50,7 +50,7 @@ console.log(tempUrl)
 }
 
 function currentWeather2(lat, lon, tempUrl) {
-    tempUrl = fiveDayUrl + lat + "&lon="+ lon  + "&exclude=minutely,hourly&alerts" + "&appid=" + apiKey;
+    tempUrl = fiveDayUrl + lat + "&lon=" + lon + "&exclude=minutely,hourly&alerts" + "&appid=" + apiKey;
     console.log(tempUrl);
     fetch(tempUrl)
         .then(function (response) {
@@ -88,100 +88,90 @@ function currentWeather2(lat, lon, tempUrl) {
 
             console.log(data);
 
-            for(var i = 0; i < 6; i++){
+            for (var i = 0; i < 6; i++) {
                 console.log(data.daily[i]);
 
-                const tempUrl = fiveDayUrl + lat + "&lon="+ lon  + "&exclude=minutely,hourly&alerts" + "&appid=" + apiKey;
-                $.getJSON(
-                    encodeURI(tempUrl),
-                    function(data) {
-                            
-                        if (data !== null && data.list !== null) {
-                            var results = data,
-                            temp = {};
-                            // icon = "https://api.openweathermap.org/img/wn/";  //double check this link
-                            console.log(results);
-                            
-                            // var newDate = ("today++");
-                            var weather = [];
-                                for(var i = 0; i < 6; i++) {
-                                    weather.push( {
-                                        date = new Date($("#today").val()),
-                                        
-                                        console.log(Data)
-                                    //     temp: Math.round(results.list[i].temp.day),
-                                    //     humidity: results.list[i].humidity.day,
-                                    //     wind: results.list[i].wind.day
-                                    
-                                }
-                            // console.log(weather);
-                        }
-                    }
+                // const tempUrl = fiveDayUrl + lat + "&lon="+ lon  + "&exclude=minutely,hourly&alerts" + "&appid=" + apiKey;
+                // $.getJSON(
+                //     encodeURI(tempUrl),
+                //     function(data) {
+
+                //         if (data !== null && data.list !== null) {
+                //             var results = data,
+                //             temp = {};
+                //             // icon = "https://api.openweathermap.org/img/wn/";  //double check this link
+                //             console.log(results);
+
+                //             // var newDate = ("today++");
+                //             var weather = [];
+                //                 for(var i = 0; i < 6; i++) {
+                //                     weather.push( {
+                //                         var date = new Date($("#today").val());
+
+                // console.log(data)
+                //     temp: Math.round(results.list[i].temp.day),
+                //     humidity: results.list[i].humidity.day,
+                //     wind: results.list[i].wind.day
 
 
-                )
+                // console.log(weather);
 
 
 
 
-                // $(function(city) {
-                //     $(".forecast-container > div").remove();
-                //     $ajax({
-                //         success: function (result) {
-                //             $.each(result, function (type, button) {
-                //                 var dateId = [i = 1].cityAndDate;
-                //                 // var tempId = 
-                //                 var tempId = (dateId++).temp;
-                //                 console.log(tempId);
+                //     $(function(city) {
+                //         $(".forecast-container > div").remove();
+                //         $ajax({
+                //             success: function (result) {
+                //                 $.each(result, function (type, button) {
+                //                     var dateId = [i = 1].cityAndDate;
+                //                     // var tempId = 
+                //                     var tempId = (dateId++).temp;
+                //                     console.log(tempId);
+                //                 }
+                //                 )
                 //             }
-                //             )
-                //         }
-                //     })
+                //         })
+                //     }
+
                 // }
-                
-                
-                
+
+
+                // }
+
+                function savedCities(city) {
+                    var data = localStorage.setItem(city);
+                    if (savedCities.length === SEARCH_LIMIT) {
+                        savedCities.pop();
+                    }
+                    $("#city").click(function () {
+                        savedCities.push(city);
+                        localStorage.setItem("city", JSON.stringify(city));
+                    })
+                    savedCities();
+
+                    // // Retrieves locally stored cities.
+                    function retrieveCities(city) {
+                        var data = localStorage.getItem(city);
+                        if (data) {
+                            return JSON.parse(data);
+                        } else {
+                            return savedCities;
+                        }
+                        // savedCities = retrieveCities();
+                        ("#city").click(retrieveCities);
+                    }
+                    // retrieveCities();
 
 
 
 
 
+                    $("#search").on("click", function (e) {
+                        e.preventDefault();
+                        // console.log("search btn clicked");
 
+                        var value = $("#city-name").val();
+                        currentWeather(value);
 
-
-
-
-            }
-
-    
-    // }
-
-    // function savedCities(city) {
-    //     if (citySearch.length === SEARCH_LIMIT) {
-    //         citySearch.pop();
-    //     }
-    //     citySearch.push(cityArrayToStore);
-    //     localStorage.setItem(KEY_CITY, JSON.stringify(citySearch));
-    // }
-    // // Retrieves locally stored cities.
-    // function retrieveCities() {
-    //     if (localStorage.getItem(city)) {
-    //         return JSON.parse(localStorage.getItem(city));
-    //     } else {
-    //         return citySearch;
-    //     }
-    // }
-    // citiesSearched = retrieveCities();
-
-
-
-
-
-$("#search").on("click", function (e) {
-    e.preventDefault();
-    // console.log("search btn clicked");
-
-    var value = $("#city-name").val();
-    currentWeather(value);
-
-})
+                    })

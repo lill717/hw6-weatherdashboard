@@ -1,51 +1,81 @@
-var searchBtn = document.getElementById('search');
-// var fetchButton = document.getElementById('fetch-button');
-
-var today = moment();
-$("#today").text(today.format("MMM Do, YYYY"));
 
 
 
-// function searchCity(value) {
-//     // searchCity.value.trim();
-//     console.log(searchCity);
-
-var apiKey = "f3e06e3f6da3749bb7e73025459954e1";
-function searchCity(searchValue) {
-    console.log(searchValue);
-    // console.log(searchValue, “in search city”);
 
 
-    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=" + apiKey + "&units=imperial";
 
-    console.log(apiUrl);
-    fetch(apiUrl).then(function (response) {
-        if (response.ok) {
-            response.json().then(function (data) {
-                //         displayWeather(data.items, city-name);
-                console.log(data);
-            });
-        }
 
-        var savedName = $("#saved-city-name").addClass("cardTitle").text(data.name);
-        // var savedTemp = $("#temp").addClass("cardTitle").text(data.name);
-        var savedTemp.attr("src", iconUrl + data.weather[0].icon + "@2x.png");
-        var savedWind = $("#wind").addClass("cardTitle").text(data.name);
-        var savedHumidity = $("#humidity").addClass("cardTitle").text(data.name);
 
-        var card1 = $(".card").val()
 
-        $("#search").on("click", function (e) {
-            e.preventDefault();
-            console.log(heeeeyyyyyyyyyy)
-            // var value = $("#city-name").val()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var searchBtn = document.getElementById('search');
+// // var fetchButton = document.getElementById('fetch-button');
+
+// var today = moment();
+// $("#today").text(today.format("MMM Do, YYYY"));
+
+
+
+// // function searchCity(value) {
+// //     // searchCity.value.trim();
+// //     console.log(searchCity);
+
+// var apiKey = "f3e06e3f6da3749bb7e73025459954e1";
+// function searchCity(searchValue) {
+//     console.log(searchValue);
+//     // console.log(searchValue, “in search city”);
+
+
+//     var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=" + apiKey + "&units=imperial";
+
+//     console.log(apiUrl);
+//     fetch(apiUrl).then(function (response) {
+//         if (response.ok) {
+//             response.json().then(function (data) {
+//                 //         displayWeather(data.items, city-name);
+//                 console.log(data);
+//             });
+//         }
+
+//         var savedName = $("#saved-city-name").addClass("cardTitle").text(data.name);
+//         // var savedTemp = $("#temp").addClass("cardTitle").text(data.name);
+//         var savedTemp.attr("src", iconUrl + data.weather[0].icon + "@2x.png");
+//         var savedWind = $("#wind").addClass("cardTitle").text(data.name);
+//         var savedHumidity = $("#humidity").addClass("cardTitle").text(data.name);
+
+//         var card1 = $(".card").val()
+
+//         $("#search").on("click", function (e) {
+//             e.preventDefault();
+//             console.log(heeeeyyyyyyyyyy)
+//             // var value = $("#city-name").val()
         
-            console.log(searchValue);
-            searchCity(searchValue);
-        });
-    })
+//             console.log(searchValue);
+//             searchCity(searchValue);
+//         });
+//     })
 
-}
+// }
 
 // var createTableCol = document.createElement('tr');
 // var tableData = document.createElement('td');
@@ -138,7 +168,7 @@ function searchCity(searchValue) {
 // weatherButtonsEl.addEventListener('click', buttonClickHandler);
 
 
-
+// icon  <img>  "id", "weather-icon")
 
 
 // uv search long and lag in overstack
