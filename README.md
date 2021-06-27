@@ -9,11 +9,7 @@ Enter a city you want a weather forecast in the search bar. Doing so will render
 
 Screenshot of the weather dashboard:
 
-
-
-
-
-
+![Screen Shot weather dashboard](https://user-images.githubusercontent.com/84090538/123531027-97962400-d6c6-11eb-8725-e59e80aaa25b.png)
 
 
 # Prerequisites
